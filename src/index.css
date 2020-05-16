@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: url('assets/raleway-v14-latin-regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 700;
+	src: url('assets/raleway-v14-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 800;
+  src: url('assets/sen-v1-latin-800.woff2') format('woff2');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  --light-blue: hsl(197, 79%, 50%);
+  --mid-blue: hsl(197, 64%, 33%);
+  --dark-blue: hsl(249, 52%, 13%);
+  margin: 40px;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  background: linear-gradient(var(--dark-blue) 20%, var(--mid-blue));
+  min-height: 100vh;
+  color: white;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: Sen, Raleway, sans-serif;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+.stitch-count {
+  font-weight: bold;
 }
