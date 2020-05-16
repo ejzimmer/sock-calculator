@@ -2,21 +2,25 @@
   "small": {
     "id": "small",
     "circumference": 6.5,
-    "cast-on": 20
+    "cast-on": 20,
+    "toe-stitches": 56
   },
   "medium": {
     "id": "medium",
     "circumference": 8,
-    "cast-on": 24
+    "cast-on": 24,
+    "toe-stitches": 64
   },
   "large": {
     "id": "large",
     "circumference": 9,
-    "cast-on": 28
+    "cast-on": 28,
+    "toe-stitches": 72
   },
   "x-large": {
     "id": "x-large",
     "circumference": 10,
-    "cast-on": 28
+    "cast-on": 28,
+    "toe-stitches": 80
   }
 }

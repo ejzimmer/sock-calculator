@@ -5,7 +5,7 @@ import SizePicker from './components/size-picker/SizePicker'
 import Toe from './components/toe/Toe'
 
 function App() {
-  const [size, setSize] = React.useState('')
+  const [size, setSize] = React.useState('small')
   
   return (
     <main>

@@ -14,7 +14,7 @@ export default function SizePicker({ selectedSize, setSize }) {
   return (
     <section>
       <h2>Size</h2>
-      <p>Assuming a gauge of ~8sts/11 rows / inch</p>
+      <p>Assuming a gauge of ~8sts/11 rows / inch. Measurements given are mid-foot circumference.</p>
       <ul className="size-switch">
         {SIZES.map((size, index) => {
           return (

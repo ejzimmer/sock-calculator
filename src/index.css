@@ -35,11 +35,17 @@ body {
   color: white;
 }
 
-h1 {
-  font-size: 40px;
+h1, h2 {
   font-weight: 800;
   font-family: Sen, Raleway, sans-serif;
 }
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
+
 
 section {
   margin-bottom: 3em;
@@ -47,4 +53,9 @@ section {
 
 .stitch-count {
   font-weight: bold;
+}
+
+.round {
+  font-weight: bold;
+  font-size: 1.2em;
 }
