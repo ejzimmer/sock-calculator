@@ -1,0 +1,12 @@
+.foot label {
+  font-style: italic;
+}
+
+#foot-length {
+  margin-top: .75em;
+  background: hsl(197 79% 109% / 0.5);
+  border: 2px solid var(--dark-blue);
+  padding: .5em;
+  font-size: 1em;
+  border-radius: 6px;
+}

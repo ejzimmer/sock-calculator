@@ -4,23 +4,42 @@ import Toe from './Toe'
 import sizes from '../../sizes.json'
 
 describe('SizePicker', () => {
-  it('should show instructions to select a size, if no size is selected', () => {
-    const wrapper = render(<Toe />)
-    const instructions = wrapper.getByText(/select a size/)
-    expect(instructions).toBeInTheDocument()
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = render(<Toe size={sizes.small.id} />)
   })
 
   it('should show cast on instructions for the selected size', () => {
-    const wrapper = render(<Toe size={sizes.small.id} />)
-    const instructions = wrapper.getByText(/20/i)
-    expect(instructions).toBeInTheDocument()
+    const instructions = wrapper.getByTestId('cast-on-instructions')
+    expect(instructions).toHaveTextContent('cast on 20 stitches')
   })
 
   it('should update the instructions when the selected size changes', () => {
-    const wrapper = render(<Toe size={sizes.small.id} />)
     wrapper.rerender(<Toe size={sizes.large.id} />)
-    const instructions = wrapper.getByText(/28/i)
-    expect(instructions).toBeInTheDocument()
+    const instructions = wrapper.getByTestId('cast-on-instructions')
+    expect(instructions).toHaveTextContent('cast on 28 stitches')
+  })
+
+  describe('row counter', () => {
+    let rowCounter
+    
+    beforeEach(() => {
+      rowCounter = wrapper.getByTestId('toe-counter')
+    })
+
+    it('should exist', () => {
+      expect(rowCounter).toBeInTheDocument()
+    })
+
+    it('should start with 10 10 12 and end with 28 28', () => {
+      expect(rowCounter).toHaveTextContent(/^10[\s]*10[\s]*12[\s0-9]*28[\s]*28$/)
+    })
+  })
+
+  it('should show the section completed indicator', () => {
+    const done = wrapper.getByTestId('toe-done')
+    expect(done).toBeInTheDocument()
   })
 })
 
