@@ -14,7 +14,6 @@ export default function Section({id, children}) {
         data-testid={ID}
         type="checkbox" 
         className="section-complete"
-        data-testid={ID}
         checked={completed} 
         onChange={() => updateCompleted(!completed)} 
         aria-label='completed'
