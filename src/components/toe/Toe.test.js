@@ -36,11 +36,6 @@ describe('SizePicker', () => {
       expect(rowCounter).toHaveTextContent(/^10[\s]*10[\s]*12[\s0-9]*28[\s]*28$/)
     })
   })
-
-  it('should show the section completed indicator', () => {
-    const done = wrapper.getByTestId('toe-done')
-    expect(done).toBeInTheDocument()
-  })
 })
 
 

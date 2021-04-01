@@ -17,8 +17,6 @@
   src: url('assets/sen-v1-latin-800.woff2') format('woff2');
 }
 
-
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -27,6 +25,8 @@ body {
   --light-blue: hsl(197, 79%, 50%);
   --mid-blue: hsl(197, 64%, 33%);
   --dark-blue: hsl(249, 52%, 13%);
+  --dark-red: hsl(349, 53%, 26%);
+  --light-red: hsl(349, 77%, 85%);
   margin: 40px;
   font-family: Raleway, sans-serif;
   font-size: 20px;
@@ -35,7 +35,7 @@ body {
   color: white;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 800;
   font-family: Sen, Raleway, sans-serif;
 }
@@ -44,6 +44,14 @@ h1 {
 }
 h2 {
   font-size: 2em;
+}
+h3 {
+  font-style: italic;
+}
+
+a {
+  color: var(--light-blue);
+  font-weight: bold;
 }
 
 
@@ -58,4 +66,35 @@ section {
 .round {
   font-weight: bold;
   font-size: 1.2em;
+}
+
+.needle {
+  font-weight: bold;
+}
+
+.multi-round-instructions {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0 1em;
+  align-items: center;
+}
+.multi-round-instructions .round:not(:first-child) {
+  margin-bottom: .3em;
+}
+.multi-round-instructions .instruction {
+  grid-column: 2;
+}
+
+.single-round-instructions {
+  display: grid;
+  margin-bottom: 1em;
+}
+
+.warning {
+  color: var(--dark-blue);
+  border: 4px solid currentColor;
+  border-radius: 10px;
+  background: hsl(197 79% 80% / .4);
+  padding: 1em;
+  box-shadow: 2px 2px 4px hsl(0 100% 0% / .2)
 }

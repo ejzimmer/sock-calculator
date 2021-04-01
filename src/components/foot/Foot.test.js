@@ -68,7 +68,13 @@ describe('Foot', () => {
 
       const stopWarning = wrapper.getByText(/stop/i)
       expect(stopWarning).toBeInTheDocument()
-    })  
+    })
+
+    it('has a row counter', () => {
+      const rowCounter = wrapper.getByTestId('foot-counter')
+      expect(rowCounter).toBeInTheDocument()
+      expect(rowCounter.textContent.endsWith('30')).toBe(true)
+    })
   })
 
 

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import './RowCounter.css'
 
-export default function RowCounter({id, rowLabels, length, onComplete}) {
+export default function RowCounter({id, rowLabels, length, updateCompleted}) {
   const [highlightIndex, setHighlightIndex] = useState()
   const [doneIndex, setDoneIndex] = useState()
-  const rows = rowLabels || Array.from(Array(length), (_, index) => index + 1)
+  const rows = rowLabels || Array.from(Array(length || 0), (_, index) => index + 1)
 
   const markDone = (index) => {
     setDoneIndex(index)
-    onComplete && onComplete(index === rows.length - 1)
+    updateCompleted && updateCompleted(index === rows.length - 1)
   }
 
   return (

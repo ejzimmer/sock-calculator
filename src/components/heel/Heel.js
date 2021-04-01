@@ -10,7 +10,7 @@ export default function Heel({size}) {
   }, [size])
 
   return (
-    <section>
+    <>
       <h2>Heel</h2>
       <h3>Short-row heel turn</h3>
 
@@ -48,6 +48,6 @@ export default function Heel({size}) {
         K to 1 stitch before gap, SSK, K1. If this is the first sock, return to the <a href="#final-increase">final increase row</a> and
         complete the second heel. Otherwise, return to working in the round.
       </p>
-    </section>
+    </>
   )
 }

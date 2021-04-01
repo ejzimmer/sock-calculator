@@ -1,10 +1,11 @@
 import React from 'react'
 import './Foot.css'
 import sizes from '../../sizes.json'
+import RowCounter from '../row-counter/RowCounter'
 
 const ROW_GAUGE = 11;
 
-export default function Foot({ size }) {
+export default function Foot({ size, updateCompleted }) {
   const [sizeInfo, setSizeInfo] = React.useState(sizes[size])
   const [footLength, setFootLength] = React.useState()
   const [sockLength, setSockLength] = React.useState()
@@ -26,7 +27,7 @@ export default function Foot({ size }) {
   }, [size])
 
   return (
-    <section className="foot">
+    <>
       <h2>Foot</h2>
       <label type="number" htmlFor="foot-length">What is the length of the feet these socks are going on (in inches)?</label>
       <input type="text" ref={lengthInput} id="foot-length" onChange={() => setFootLength(lengthInput.current.value)} />
@@ -46,6 +47,8 @@ export default function Foot({ size }) {
             Knit rounds 1 and 2 another <span className="stitch-count">{sizeInfo.gussetRounds}</span> times. 
             You should have a total of <span className="stitch-count">{sizeInfo.stitchesAfterGussetIncreases}</span> stitches.
           </p>
+
+          <RowCounter id="foot" data-testid="foot-counter" length={sizeInfo.gussetRounds * 2} updateCompleted={updateCompleted}></RowCounter>
 
           <h3>Place markers</h3>
           <p>Next, place markers to separate the sole stitches from the gusset increase stitches.</p>
@@ -73,6 +76,6 @@ export default function Foot({ size }) {
 
         </>
       )}
-    </section>
+    </>
   )
 }

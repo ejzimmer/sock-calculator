@@ -3,9 +3,13 @@ import './App.css'
 
 import SizePicker from './components/size-picker/SizePicker'
 import Toe from './components/toe/Toe'
+import Foot from './components/foot/Foot'
+import Heel from './components/heel/Heel'
+import Section from './components/section/Section'
+import Reset from './components/reset/Reset'
 
 function App() {
-  const [size, setSize] = React.useState('small')
+  const [size, setSize] = React.useState('')
   
   return (
     <main>
@@ -18,7 +22,23 @@ function App() {
       </section>
 
       <SizePicker selectedSize={size} setSize={setSize} />
-      <Toe size={size} />
+
+      { size ? (
+        <>
+          <Section id="toe">
+            <Toe size={size} />
+          </Section>
+          <Section id="foot">
+            <Foot size={size} />
+          </Section>
+          <Section id="heel">
+            <Heel size={size} />
+          </Section>
+          <Reset />
+        </>)
+        : <p>To continue, please select a size from above</p>
+      }
+
     </main>
   );
 }

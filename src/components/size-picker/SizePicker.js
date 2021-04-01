@@ -19,7 +19,15 @@ export default function SizePicker({ selectedSize, setSize }) {
         {SIZES.map((size, index) => {
           return (
             <li key={size}>
-              <input type="radio" name="size" id={size} value={size} checked={selectedSize === size} onChange={setSizeSelected} />
+              <input
+                data-testid={`size-${size}`}
+                type="radio" 
+                name="size" 
+                id={size} 
+                value={size} 
+                checked={selectedSize === size} 
+                onChange={setSizeSelected} 
+              />
               <label htmlFor={size}>{size} ({INCHES[index]}")</label>
             </li>
           )

@@ -26,7 +26,7 @@ describe('RowCounter component', () => {
 
   beforeEach(() => {
     callback = jest.fn()
-    wrapper = render(<RowCounter length={ROW_COUNT} onComplete={callback} />)
+    wrapper = render(<RowCounter length={ROW_COUNT} updateCompleted={callback} />)
     cells = wrapper.getAllByRole('listitem')
     checkboxes = wrapper.getAllByRole('checkbox')
   })

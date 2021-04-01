@@ -2,25 +2,53 @@
   "small": {
     "id": "small",
     "circumference": 6.5,
-    "cast-on": 20,
-    "toe-stitches": 56
+    "castOn": 20,
+    "toeStitches": 56,
+    "gussetRounds": 11,
+    "stitchesAfterGussetIncreases": 84,
+    "finalIncreaseKnits": 1,
+    "finalIncreaseMakes": 6,
+    "wrappedStitches": 7,
+    "centreStitches": 12,
+    "finalSoleStitches": 26
   },
   "medium": {
     "id": "medium",
     "circumference": 8,
-    "cast-on": 24,
-    "toe-stitches": 64
+    "castOn": 24,
+    "toeStitches": 64,
+    "gussetRounds": 13,
+    "stitchesAfterGussetIncreases": 96,
+    "finalIncreaseKnits": 3,
+    "finalIncreaseMakes": 6,
+    "wrappedStitches": 9,
+    "centreStitches": 12,
+    "finalSoleStitches": 30
   },
   "large": {
     "id": "large",
     "circumference": 9,
-    "cast-on": 28,
-    "toe-stitches": 72
+    "castOn": 28,
+    "toeStitches": 72,
+    "gussetRounds": 15,
+    "stitchesAfterGussetIncreases": 108,
+    "finalIncreaseKnits": 3,
+    "finalIncreaseMakes": 7,
+    "wrappedStitches": 10,
+    "centreStitches": 14,
+    "finalSoleStitches": 34
   },
   "x-large": {
     "id": "x-large",
     "circumference": 10,
-    "cast-on": 28,
-    "toe-stitches": 80
+    "castOn": 28,
+    "toeStitches": 80,
+    "gussetRounds": 17,
+    "stitchesAfterGussetIncreases": 120,
+    "finalIncreaseKnits": 3,
+    "finalIncreaseMakes": 8,
+    "wrappedStitches": 12,
+    "centreStitches": 14,
+    "finalSoleStitches": 38
   }
 }
