@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import sizes from "../../sizes.json"
 
 export default function Heel({ size }) {
-  const [sizeInfo, setSizeInfo] = useState(sizes[size])
-
-  useEffect(() => {
-    setSizeInfo(sizes[size])
-  }, [size])
+  const { wrappedStitches, centreStitches, finalSoleStitches } = sizes[size]
 
   return (
     <>
@@ -33,12 +29,10 @@ export default function Heel({ size }) {
 
       <p>
         Repeat rows 3 & 4 until there are{" "}
-        <span className="stitch-count">{sizeInfo.wrappedStitches + 1}</span>{" "}
-        stitches on each side -{" "}
-        <span className="stitch-count">{sizeInfo.wrappedStitches}</span> wrapped
-        and the very outside stitch unwrapped - plus{" "}
-        <span className="stitch-count">{sizeInfo.centreStitches}</span> centre
-        stitches.
+        <span className="stitch-count">{wrappedStitches + 1}</span> stitches on
+        each side - <span className="stitch-count">{wrappedStitches}</span>{" "}
+        wrapped and the very outside stitch unwrapped - plus{" "}
+        <span className="stitch-count">{centreStitches}</span> centre stitches.
       </p>
 
       <p>
@@ -50,8 +44,8 @@ export default function Heel({ size }) {
         wrap, P2tog. Turn.
       </p>
       <p>
-        <span className="stitch-count">{sizeInfo.finalSoleStitches}</span> sole
-        stitches remain.
+        <span className="stitch-count">{finalSoleStitches}</span> sole stitches
+        remain.
       </p>
 
       <h3>Heel flap</h3>
@@ -76,8 +70,8 @@ export default function Heel({ size }) {
 
       <p>
         Repeat rows 3 & 4 until 2 stitches remain outside each gap.{" "}
-        <span className="stitch-count">{sizeInfo.finalSoleStitches + 4}</span>{" "}
-        stitches remain on needle 1.
+        <span className="stitch-count">{finalSoleStitches + 4}</span> stitches
+        remain on needle 1.
       </p>
 
       <p>

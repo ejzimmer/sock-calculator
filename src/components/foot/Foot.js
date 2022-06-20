@@ -1,29 +1,24 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef } from "react"
 import "./Foot.css"
 import sizes from "../../sizes.json"
 
 const ROW_GAUGE = 11
 
 export default function Foot({ size }) {
-  const [sizeInfo, setSizeInfo] = useState(sizes[size])
   const [footLength, setFootLength] = useState()
-  const [sockLength, setSockLength] = useState(0)
-  const [gussetStitches, setGussetStitches] = useState(0)
 
   const lengthInput = useRef(null)
 
-  useEffect(() => {
-    const numberOfStitches = sizes[size].toeStitches * 0.75
-    const heelLength = numberOfStitches / ROW_GAUGE
-    const unroundedLength = (footLength || 0) - heelLength - 0.25
-    const roundedLength = Math.round(unroundedLength * 10) / 10
-    setSockLength(roundedLength)
-  }, [footLength, size])
-
-  useEffect(() => {
-    setSizeInfo(sizes[size])
-    setGussetStitches(sizes[size].stitchesAfterGussetIncreases / 6)
-  }, [size])
+  const {
+    toeStitches,
+    stitchesAfterGussetIncreases,
+    gussetRounds,
+    finalIncreaseKnits,
+    finalIncreaseMakes,
+  } = sizes[size]
+  const heelLength = (toeStitches * 0.75) / ROW_GAUGE
+  const lengthBeforeGusset = ((footLength || 0) - heelLength - 0.25).toFixed(1)
+  const gussetStitches = stitchesAfterGussetIncreases / 6
 
   return (
     <>
@@ -41,7 +36,7 @@ export default function Foot({ size }) {
         <>
           <p>
             Continue knitting in stocking stitch until the socks measure{" "}
-            <span className="stitch-count">{sockLength}"</span>
+            <span className="stitch-count">{lengthBeforeGusset}"</span>
           </p>
 
           <h3>Gusset increases</h3>
@@ -59,11 +54,9 @@ export default function Foot({ size }) {
           </div>
           <p>
             Knit rounds 1 and 2 another{" "}
-            <span className="stitch-count">{sizeInfo.gussetRounds}</span> times.
-            You should have a total of{" "}
-            <span className="stitch-count">
-              {sizeInfo.stitchesAfterGussetIncreases}
-            </span>{" "}
+            <span className="stitch-count">{gussetRounds}</span> times. You
+            should have a total of{" "}
+            <span className="stitch-count">{stitchesAfterGussetIncreases}</span>{" "}
             stitches.
           </p>
 
@@ -90,8 +83,8 @@ export default function Foot({ size }) {
             </div>
             <div>
               <span className="needle">Needle 2 (sole):</span> K to marker, SM,
-              K to marker, SM, K{sizeInfo.finalIncreaseKnits}, [M1R, K2]{" "}
-              {sizeInfo.finalIncreaseMakes} times, K1
+              K to marker, SM, K{finalIncreaseKnits}, [M1R, K2]{" "}
+              {finalIncreaseMakes} times, K1
             </div>
           </div>
 
@@ -101,8 +94,7 @@ export default function Foot({ size }) {
             </div>
             <div id="final-increase">
               <span className="needle">Needle 2 (sole):</span> K1, [K2, M1L]{" "}
-              {sizeInfo.finalIncreaseMakes} times, K
-              {sizeInfo.finalIncreaseKnits}
+              {finalIncreaseMakes} times, K{finalIncreaseKnits}
             </div>
           </div>
 
